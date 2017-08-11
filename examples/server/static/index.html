@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <title>sort-viz – Demo</title>
+    <link rel="icon" href="favicon.ico" />
+    <!--[if IE]><link rel="shortcut icon" href="favicon.ico" /><![endif]-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.min.css" integrity="sha256-VC9bpAao257nf22leBRLU7AqKGwS9/Ylz8hfpHmOob4=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <img src="img/logo.png" alt="sort-viz" width="28" height="28">
+          <h1 class="title">sort-viz</h1>
+        </a>
+      </div>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/patrickroberts" target="_blank">
+          <span class="icon is-large">
+            <i class="fa fa-github"></i>
+          </span>
+        </a>
+      </div>
+    </nav>
+    <section class="hero is-dark is-bold">
+      <div class="hero-body">
+        <p class="title">
+          Sorting Algorithm Visualizations
+        </p>
+        <p class="subtitle">
+          Demo
+        </p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container-fluid">
+        <div class="columns">
+          <div class="column is-6 is-unselectable">
+            <div class="columns is-mobile is-multiline">
+              <div class="column is-half-mobile is-one-third-tablet">
+                <div class="field">
+                  <label class="label">Algorithm</label>
+                  <div class="control has-icons-left is-expanded">
+                    <div class="select is-small is-fullwidth">
+                      <select id="algorithm">
+                        <optgroup label="Comparative Sorts">
+                          <option value="Bubble" data-size="64">Bubble</option>
+                          <option value="Cocktail" data-size="64">Cocktail</option>
+                          <option value="Heap" data-size="256">Heap</option>
+                          <option value="Insertion" data-size="64">Insertion</option>
+                          <option value="IterativeMerge" data-size="256">Merge (Iterative)</option>
+                          <option value="RecursiveMerge" data-size="256">Merge (Recursive)</option>
+                          <option value="Quick" data-size="256">Quick</option>
+                          <option value="Selection" data-size="64">Selection</option>
+                          <option value="Shell" data-size="256">Shell</option>
+                          <option value="Smooth" data-size="128">Smooth</option>
+                          <option value="Tournament" data-size="256">Tournament</option>
+                        </optgroup>
+                        <optgroup label="Keyed Sorts">
+                          <option value="Radix" data-size="256">Radix (LSD)</option>
+                        </optgroup>
+                      </select>
+                      <div class="icon is-small is-left">
+                        <i class="fa fa-code"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-half-mobile is-one-third-tablet">
+                <div class="field">
+                  <label class="label">Criteria</label>
+                  <div class="control has-icons-left is-expanded">
+                    <div class="select is-small is-fullwidth">
+                      <select id="criteria">
+                        <optgroup label="By Dimension">
+                          <option value="top" data-max="100">Top</option>
+                          <option value="bottom" data-max="100">Bottom</option>
+                          <option value="height" data-max="100">Height</option>
+                          <option value="center" data-max="100">Center</option>
+                        </optgroup>
+                        <optgroup label="By Color">
+                          <option value="red" data-max="256">Red</option>
+                          <option value="green" data-max="256">Green</option>
+                          <option value="blue" data-max="256">Blue</option>
+                          <option value="hue" data-max="1">Hue</option>
+                          <option value="saturation" data-max="1">Saturation</option>
+                          <option value="lightness" data-max="1">Lightness</option>
+                          <option value="luminance" data-max="2560000">Luminance</option>
+                        </optgroup>
+                      </select>
+                      <div class="icon is-small is-left">
+                        <i class="fa fa-sliders"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-half-mobile is-one-third-tablet">
+                <div class="field">
+                  <label class="label">Order</label>
+                  <div class="control has-icons-left is-expanded">
+                    <div class="select is-small is-fullwidth">
+                      <select id="order">
+                        <option value="ascending">Ascending</option>
+                        <option value="descending">Descending</option>
+                      </select>
+                      <div class="icon is-small is-left">
+                        <i class="fa fa-sort"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-half-mobile is-one-third-tablet">
+                <div class="field">
+                  <label class="label">Interval</label>
+                  <div class="control has-icons-left has-icons-right is-expanded">
+                    <input class="input is-small" id="interval" type="number" min="0" value="0">
+                    <div class="icon is-small is-left">
+                      <i class="fa fa-clock-o"></i>
+                    </div>
+                    <div class="icon is-small is-right">
+                      <span>ms</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-half-mobile is-one-third-tablet">
+                <div class="field">
+                  <label class="label">History</label>
+                  <div class="control has-icons-left is-expanded">
+                    <input class="input is-small" id="history" type="number" min="1" value="8">
+                    <div class="icon is-small is-left">
+                      <i class="fa fa-history"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-half-mobile is-one-third-tablet">
+                <div class="field">
+                  <label class="label">Size</label>
+                  <div class="control has-icons-left is-expanded">
+                    <input class="input is-small" id="size" type="number" min="1" value="256">
+                    <div class="icon is-small is-left">
+                      <i class="fa fa-signal"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="columns is-mobile is-multiline is-padded-top-tablet">
+              <div class="column">
+                <div class="has-text-centered">
+                  <button type="button" class="button is-small" id="toggle">
+                    <span class="icon is-small has-text-success">
+                      <i class="fa fa-play"></i>
+                    </span>
+                    <span class="content">Sort</span>
+                  </button>
+                </div>
+              </div>
+              <div class="column">
+                <div class="has-text-centered">
+                  <button type="button" class="button is-small" id="step">
+                    <span class="icon is-small has-text-info">
+                      <i class="fa fa-step-forward"></i>
+                    </span>
+                    <span class="content">Step</span>
+                  </button>
+                </div>
+              </div>
+              <div class="column">
+                <div class="has-text-centered">
+                  <button type="button" class="button is-small" id="shuffle">
+                    <span class="icon is-small has-text-dark">
+                      <i class="fa fa-random"></i>
+                    </span>
+                    <span class="content">Shuffle</span>
+                  </button>
+                </div>
+              </div>
+              <div class="column">
+                <div class="has-text-centered">
+                  <button type="button" class="button is-small" id="reset">
+                    <span class="icon is-small has-text-danger">
+                      <i class="fa fa-undo"></i>
+                    </span>
+                    <span class="content">Reset</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="columns is-mobile is-multiline">
+              <div class="column">
+                <div class="has-text-centered has-text-success">
+                  <p class="heading">Compares</p>
+                  <p class="subtitle is-6" id="compares">0</p>
+                </div>
+              </div>
+              <div class="column">
+                <div class="has-text-centered has-text-info">
+                  <p class="heading">Swaps</p>
+                  <p class="subtitle is-6" id="swaps">0</p>
+                </div>
+              </div>
+              <div class="column">
+                <div class="has-text-centered has-text-dark">
+                  <p class="heading">Puts</p>
+                  <p class="subtitle is-6" id="puts">0</p>
+                </div>
+              </div>
+              <div class="column">
+                <div class="has-text-centered has-text-danger">
+                  <p class="heading">Keys</p>
+                  <p class="subtitle is-6" id="keys">0</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-mobile is-gapless" id="container"></div>
+        <div class="columns is-mobile is-gapless" id="steps"></div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="js/sort.min.js"></script>
+    <script src="js/app.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "tags": {
+    "allowUnknownTags": false
+  },
+  "opts": {
+    "destination": "docs"
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "templates": {
+    "path": "ink-docstrap",
+    "theme": "simplex",
+    "includeDate": false,
+    "search": true
+  }
+}

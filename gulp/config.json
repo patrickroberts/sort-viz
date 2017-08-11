@@ -1,0 +1,20 @@
+{
+  "paths": {
+    "app": {
+      "src": "examples/server/app/index.js",
+      "dst": "examples/server/static/js"
+    },
+    "lib": {
+      "src": "lib/index.js",
+      "dst": "umd"
+    },
+    "docs": {
+      "src": "lib/**/*.js"
+    }
+  },
+  "names": {
+    "lib": "sort.min.js",
+    "app": "app.min.js",
+    "glob": "sort"
+  }
+}
