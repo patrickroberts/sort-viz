@@ -57,6 +57,9 @@
       ]
     ]
   },
+  "standard": {
+    "ignore": ["docs/"]
+  },
   "dependencies": {
     "express": "^4.15.4"
   },

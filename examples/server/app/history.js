@@ -1,6 +1,6 @@
 import * as view from './view'
 
-const { getComputedStyle, jQuery: $, sort } = global
+const { getComputedStyle, sort } = global
 const { ScopeArray } = sort
 
 const colors = Object.entries(view.$ops).reduce((colors, [key, $element]) => {
