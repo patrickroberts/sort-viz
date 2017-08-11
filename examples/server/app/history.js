@@ -11,8 +11,6 @@ const colors = Object.entries(view.$ops).reduce((colors, [key, $element]) => {
 
 class Step {
   constructor ({ type, entries }) {
-    console.log(type)
-
     this.color = colors[type]
     this.rects = entries.map(([index]) => {
       const offset = view.container.children[index].getBoundingClientRect()

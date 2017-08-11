@@ -82,7 +82,7 @@ export function handleControllerEvent ({ type, entries }, isSorting) {
     case 'key':
       break
     default:
-      console.log(`unhandled event type ${type}`)
+      console.warn(`unhandled event type ${type}`)
       return
   }
 

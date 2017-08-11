@@ -1,6 +1,6 @@
 {
   "name": "sort-viz",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Sorting Algorithm Visualizations",
   "main": "umd/sort.min.js",
   "subdomain": "sorts",
