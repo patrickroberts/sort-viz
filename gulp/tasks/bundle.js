@@ -11,6 +11,14 @@ const gutil = require('gulp-util')
 
 const config = require('../config')
 
+const babel = babelify.configure({
+  presets: ['es2015', 'es2016'],
+  plugins: [
+    ['transform-builtin-extend', { globals: ['Array'] }],
+    'transform-runtime'
+  ]
+})
+
 gulp.task('bundle:app', () => {
   const basename = path.basename(config.paths.app.src)
   const dirname = path.dirname(config.paths.app.src)
@@ -21,14 +29,6 @@ gulp.task('bundle:app', () => {
     debug: true,
     entries: rootbase,
     basedir: rootdir
-  })
-
-  const babel = babelify.configure({
-    presets: ['es2015', 'es2016'],
-    plugins: [
-      ['transform-builtin-extend', { globals: ['Array'] }],
-      'transform-runtime'
-    ]
   })
 
   return browser
@@ -57,14 +57,6 @@ gulp.task('bundle:lib', () => {
     entries: rootbase,
     basedir: rootdir,
     standalone: config.names.glob
-  })
-
-  const babel = babelify.configure({
-    presets: ['es2015', 'es2016'],
-    plugins: [
-      ['transform-builtin-extend', { globals: ['Array'] }],
-      'transform-runtime'
-    ]
   })
 
   return browser

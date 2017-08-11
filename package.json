@@ -45,11 +45,20 @@
             "es2016"
           ],
           "plugins": [
+            [
+              "transform-builtin-extend",
+              {
+                "globals": ["Array"]
+              }
+            ],
             "transform-runtime"
           ]
         }
       ]
     ]
+  },
+  "dependencies": {
+    "express": "^4.15.4"
   },
   "devDependencies": {
     "babel-plugin-transform-builtin-extend": "^1.1.2",
@@ -67,8 +76,5 @@
     "standard": "^10.0.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
-  },
-  "dependencies": {
-    "express": "^4.15.4"
   }
 }
