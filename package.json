@@ -1,6 +1,6 @@
 {
   "name": "sort-viz",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Sorting Algorithm Visualizations",
   "main": "umd/sort.min.js",
   "subdomain": "sorts",
@@ -10,7 +10,7 @@
     "example": "examples"
   },
   "scripts": {
-    "prepublishOnly": "npm build && npm test",
+    "prepublishOnly": "npm run build && npm test",
     "build": "gulp",
     "test": "standard",
     "start": "app.js"
