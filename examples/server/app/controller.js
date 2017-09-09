@@ -37,7 +37,6 @@ export default class SortController {
   }
 
   static get selectedEntry () {
-    const array = view.$algorithm.val()
     const isKeyed = Boolean(view.$algorithm.find(':selected').data('keyed'))
     const name = isKeyed ? 'Key' : 'Compare'
 
