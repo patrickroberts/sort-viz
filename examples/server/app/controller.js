@@ -38,17 +38,20 @@ export default class SortController {
 
   static get selectedEntry () {
     const array = view.$algorithm.val()
-    const name = array === 'Radix' ? 'Key' : 'Compare'
+    const isKeyed = Boolean(view.$algorithm.find(':selected').data('keyed'))
+    const name = isKeyed ? 'Key' : 'Compare'
 
     return [name.toLowerCase(), SortController[`selected${name}`]]
   }
 
   static createInterrupt (controller) {
-    return function interrupt (event) {
-      view.handleControllerEvent(event, this.isSorting)
+    return function interrupt (event = null) {
+      if (event !== null) {
+        view.handleControllerEvent(event, this.isSorting)
 
-      if (this.isSorting) {
-        this.history.push(event)
+        if (this.isSorting) {
+          this.history.push(event)
+        }
       }
 
       if (this.isPlaying) {

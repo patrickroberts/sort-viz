@@ -1,4 +1,4 @@
-# ![logo](http://i.imgur.com/Z7OeWcu.png) sort-viz
+# ![logo](https://i.imgur.com/Z7OeWcu.png) sort-viz
 
 Sorting Algorithm Visualizations
 

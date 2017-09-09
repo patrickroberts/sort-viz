@@ -1,6 +1,6 @@
 {
   "name": "sort-viz",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Sorting Algorithm Visualizations",
   "main": "umd/sort.min.js",
   "subdomain": "sorts",
@@ -13,7 +13,7 @@
     "prepublishOnly": "npm run build && npm test",
     "build": "gulp",
     "test": "standard",
-    "start": "app.js"
+    "start": "node examples/server"
   },
   "repository": {
     "type": "git",
@@ -48,7 +48,9 @@
             [
               "transform-builtin-extend",
               {
-                "globals": ["Array"]
+                "globals": [
+                  "Array"
+                ]
               }
             ],
             "transform-runtime"
@@ -58,7 +60,9 @@
     ]
   },
   "standard": {
-    "ignore": ["docs/"]
+    "ignore": [
+      "docs/"
+    ]
   },
   "dependencies": {
     "express": "^4.15.4"
@@ -72,11 +76,11 @@
     "browserify": "^14.4.0",
     "gulp": "^3.9.1",
     "gulp-jsdoc3": "^1.0.1",
-    "gulp-sourcemaps": "^2.6.0",
+    "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "require-dir": "^0.3.2",
-    "standard": "^10.0.2",
+    "standard": "^10.0.3",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   }

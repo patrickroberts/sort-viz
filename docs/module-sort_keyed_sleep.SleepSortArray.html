@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: ShellSortArray</title>
+	<title>Documentation Class: SleepSortArray</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -79,18 +79,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: ShellSortArray</h1>
+	<h1 class="page-title">Class: SleepSortArray</h1>
 <section>
 
 <header>
     
         <h2>
-            <span class="ancestors"><a href="module-sort_comparative_shell.html">sort/comparative/shell</a>.</span>
+            <span class="ancestors"><a href="module-sort_keyed_sleep.html">sort/keyed/sleep</a>.</span>
         
-        ShellSortArray
+        SleepSortArray
         </h2>
-        
-            <div class="class-description"><p>Uses the <a href="https://oeis.org/A108870">Tokuda gap sequence</a> by default.</p></div>
         
     
 </header>
@@ -102,7 +100,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="ShellSortArray"><span class="type-signature"></span>new ShellSortArray( [interrupt] [, compare] [, sequence])</h4>
+    <h4 class="name" id="SleepSortArray"><span class="type-signature"></span>new SleepSortArray()</h4>
     
     
 </dt>
@@ -115,155 +113,6 @@
     
 
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Argument</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>interrupt</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="module-sort_virtual.html#.interruptCallback">module:sort/virtual.interruptCallback</a></span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>compare</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="module-sort_virtual.html#.compareCallback">module:sort/virtual.compareCallback</a></span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>sequence</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">iterable</span>
-|
-
-<span class="param-type"><a href="module-sort_virtual.html#.sequenceCallback">module:sort/virtual.sequenceCallback</a></span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    ShellSortArray.tokuda
-                
-                </td>
-            
-
-            <td class="description last"><p>If an <code>iterable</code> is passed, it is converted to a <code>sequenceCallback</code>.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
     
 
     
@@ -304,7 +153,7 @@
 	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
 	<dd class="tag-see">
 		<ul>
-			<li><a href="https://en.wikipedia.org/wiki/Shellsort">Shellsort</a></li>
+			<li><a href="https://rosettacode.org/wiki/Sorting_algorithms/Sleep_sort">Sleep Sort</a></li>
 			</ul>
 	</dd>
 	
@@ -322,34 +171,6 @@
     
 
     
-    <h5>Throws:</h5>
-    
-            
-
-<dl>
-    <dt>
-        <div class="param-desc">
-        <p><code>sequence</code> must be iterable or function.</p>
-        </div>
-    </dt>
-    <dt>
-        <dl>
-            <dt>
-                Type
-            </dt>
-            <dd>
-                
-<span class="param-type">TypeError</span>
-
-
-
-            </dd>
-        </dl>
-    </dt>
-</dl>
-
-
-        
 
     
 
@@ -366,7 +187,7 @@
 
 
     <ul>
-        <li><a href="module-sort_comparative.ComparativeSortArray.html">module:sort/comparative.ComparativeSortArray</a></li>
+        <li><a href="module-sort_keyed.KeyedSortArray.html">module:sort/keyed.KeyedSortArray</a></li>
     </ul>
 
 
@@ -386,597 +207,6 @@
         <h3 class="subsection-title">Methods</h3>
 
         <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id=".sequence"><span class="type-signature">&lt;generator, static> </span>sequence(length, gaps)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Generates an ordered gap sequence sufficient for given <code>length</code>.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>length</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>gaps</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="module-sort_virtual.html#.sequenceCallback">module:sort/virtual.sequenceCallback</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".tokuda"><span class="type-signature">&lt;static> </span>tokuda(index)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>index</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="compare"><span class="type-signature">&lt;generator> </span>compare(i, j [, a] [, b])</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>A method to interruptably compare two elements in the array.
-<code>a</code> and <code>b</code> are optional, since <code>i</code> and <code>j</code> can sometimes be
-used to represent indices that are virtual in the comparsion.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Argument</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>i</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Index of left-hand element to compare.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>j</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>Index of right-hand element to compare.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>a</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    this[i]
-                
-                </td>
-            
-
-            <td class="description last"><p>Value of left-hand element to compare.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>b</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    this[j]
-                
-                </td>
-            
-
-            <td class="description last"><p>Value of right-hand element to compare.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="module-sort_comparative.ComparativeSortArray.html#compare">module:sort/comparative.ComparativeSortArray#compare</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>result - See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description"><code>compareFunction</code></a></p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
             
 <hr>
 <dt>
@@ -1693,6 +923,225 @@ used to represent indices that are virtual in the comparsion.</p>
             
 <hr>
 <dt>
+    <h4 class="name" id="key"><span class="type-signature">&lt;generator> </span>key(index [, value])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>A method to interruptably key an element in the array.
+<code>value</code> is optional, since <code>index</code> can sometimes be
+used to represent an index that is virtual in the key.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Index of the element to key.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    this[i]
+                
+                </td>
+            
+
+            <td class="description last"><p>Value of the element to key.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="module-sort_keyed.KeyedSortArray.html#key">module:sort/keyed.KeyedSortArray#key</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>result - A non-negative integer value representing the relational index of <code>value</code>.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
     <h4 class="name" id="put"><span class="type-signature">&lt;generator> </span>put(index, value)</h4>
     
     
@@ -2384,7 +1833,7 @@ Uses the <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Kn
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="module-sort_comparative.ComparativeSortArray.html#sort">module:sort/comparative.ComparativeSortArray#sort</a>
+        <a href="module-sort_keyed.KeyedSortArray.html#sort">module:sort/keyed.KeyedSortArray#sort</a>
     </li></ul></dd>
     
 
