@@ -1,6 +1,6 @@
 {
   "name": "sort-viz",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Sorting Algorithm Visualizations",
   "main": "umd/sort.min.js",
   "subdomain": "sorts",
@@ -10,10 +10,11 @@
     "example": "examples"
   },
   "scripts": {
-    "prepublishOnly": "npm run build && npm test",
     "build": "gulp",
-    "test": "standard",
-    "start": "node examples/server"
+    "git": "git push heroku master && git push origin master",
+    "prepublishOnly": "npm run build && npm test && npm run git",
+    "start": "node examples/server",
+    "test": "standard"
   },
   "repository": {
     "type": "git",
